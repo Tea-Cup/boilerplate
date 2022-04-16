@@ -1,6 +1,18 @@
 # Boilerplate
 Generate boilerplate configs and file structure using one console command.
 
+## Installation
+Package is not published on NPM yet.
+
+To install, clone this repo, navigate to directory and run:
+```
+npm link
+```
+or
+```
+yarn link
+```
+
 ## Commands
 * \<no arguments> - same as `--list`.
 * `--list` - show list of found templates.
