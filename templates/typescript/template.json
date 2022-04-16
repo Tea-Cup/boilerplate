@@ -1,0 +1,29 @@
+{
+  "description": "Plain typescript package.",
+  "config": {
+    "package.json": {
+      "main": "./out/index.js",
+      "scripts": {
+        "build": "tsc -b",
+        "watch": "tsc -b -w"
+      },
+      "devDependencies": {
+        "typescript": "^4.6.3"
+      }
+    },
+    "tsconfig.json": {
+      "type": "json",
+      "root": {
+        "compilerOptions": {
+          "target": "es2016",
+          "module": "commonjs",
+          "outDir": "./out",
+          "esModuleInterop": true,
+          "forceConsistentCasingInFileNames": true,
+          "strict": true,
+          "skipLibCheck": true
+        }
+      }
+    }
+  }
+}
