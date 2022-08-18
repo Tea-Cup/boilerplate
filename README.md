@@ -59,6 +59,7 @@ Inside, there are `template.json` file and an optional `fs` directory.
 * When filename == `package.json` it is considered a package file. It's values are pasted into target package file.  
 Supported keys are: `version`, `main`, `license`, `scripts`, `dependencies`, `devDependencies`.
 * When value `type` == `json` it is considered a simple JSON file. You can specify it's contents using `root` field.
+* When value `type` == `txt` it is considered a simple text file. You can specify it's lines using `lines` field.
 
 Default `package.json` contents:
 ```json
