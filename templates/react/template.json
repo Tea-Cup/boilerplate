@@ -1,0 +1,77 @@
+{
+  "description": "Typescript+React+Webpack+LESS package.",
+  "config": {
+    "package.json": {
+      "main": "index.js",
+      "scripts": {
+        "start": "webpack serve"
+      },
+      "devDependencies": {
+        "@types/react": "^17.0.39",
+        "@types/react-dom": "^17.0.13",
+        "@typescript-eslint/eslint-plugin": "^5.13.0",
+        "@typescript-eslint/parser": "^5.13.0",
+        "css-loader": "^6.6.0",
+        "eslint": "^8.10.0",
+        "less": "^4.1.2",
+        "less-loader": "^10.2.0",
+        "prettier": "^2.5.1",
+        "style-loader": "^3.3.1",
+        "ts-loader": "^9.2.7",
+        "typescript": "^4.6.2",
+        "webpack": "^5.69.1",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.7.4"
+      },
+      "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+      }
+    },
+    "tsconfig.json": {
+      "type": "json",
+      "root": {
+        "compilerOptions": {
+          "target": "es2016",
+          "module": "commonjs",
+          "esModuleInterop": true,
+          "forceConsistentCasingInFileNames": true,
+          "strict": true,
+          "skipLibCheck": true,
+          "jsx": "react"
+        }
+      }
+    },
+    ".eslintignore": {
+      "type": "txt",
+      "lines": [
+        "node_modules",
+        "out",
+        "webpack.config.js"
+      ]
+    },
+    ".eslintrc": {
+      "type": "json",
+      "root": {
+        "root": true,
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+          "@typescript-eslint"
+        ],
+        "extends": [
+          "eslint:recommended",
+          "plugin:@typescript-eslint/eslint-recommended",
+          "plugin:@typescript-eslint/recommended"
+        ]
+      }
+    },
+    ".prettierrc": {
+      "type": "json",
+      "root": {
+        "printWidth": 90,
+        "singleQuote": true,
+        "trailingComma": "none"
+      }
+    }
+  }
+}

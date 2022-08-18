@@ -2,7 +2,7 @@ export interface TemplateConfigBase {
   type: string;
 }
 export interface TemplatePackageJson extends TemplateConfigBase {
-  type: 'package.json';
+  type: "package.json";
   version: string;
   main: string;
   license: string;
@@ -11,11 +11,18 @@ export interface TemplatePackageJson extends TemplateConfigBase {
   devDependencies?: Record<string, string>;
 }
 export interface TemplateConfigJson extends TemplateConfigBase {
-  type: 'json';
+  type: "json";
   root: object;
 }
 
-export type TemplateConfig = TemplatePackageJson | TemplateConfigJson;
+export interface TemplateConfigTxt extends TemplateConfigBase {
+  type: "txt";
+  lines: string[];
+}
+export type TemplateConfig =
+  | TemplatePackageJson
+  | TemplateConfigJson
+  | TemplateConfigTxt;
 export interface TemplateInfo {
   path: string;
   description: string;

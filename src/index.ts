@@ -22,8 +22,11 @@ function recursiveCopy(from: string, to: string) {
   const statFrom = fs.statSync(from);
   const statTo = fs.statSync(to, { throwIfNoEntry: false });
   if (statFrom.isDirectory()) {
-    cli.normal('Copying ').yellow(p.basename(from)+'/').log();
-    if(!statTo) {
+    cli
+      .normal("Copying ")
+      .yellow(p.basename(from) + "/")
+      .log();
+    if (!statTo) {
       fs.mkdirSync(to);
     } else if (!statTo.isDirectory()) {
       fs.rmSync(to);
@@ -34,7 +37,7 @@ function recursiveCopy(from: string, to: string) {
       recursiveCopy(p.join(from, filename), p.join(to, filename));
     }
   } else {
-    cli.normal('Copying ').yellow(p.basename(from)).log();
+    cli.normal("Copying ").yellow(p.basename(from)).log();
     if (statTo && statTo.isDirectory()) fs.rmdirSync(to);
     fs.copyFileSync(from, to);
   }
@@ -104,6 +107,8 @@ async function run() {
       value = JSON.stringify(pkg, undefined, 2);
     } else if (cfg.type === "json") {
       value = JSON.stringify(cfg.root, undefined, 2);
+    } else if (cfg.type === "txt") {
+      value = cfg.lines.join("\n");
     } else {
       cli.red("Unknown config type: ").normal(cfg.type).log();
       return;
